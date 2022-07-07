@@ -7,7 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>kaushik</h2>
-    <h1>Hello</h1>
+<!-- add class in react library -->
+    import classNames from "classnames";
+      const [navbarOpen, setNavbarOpen] = useState(false);
+    <div className={classNames("menu", { on: navbarOpen })}></div>
+    
+<!--     pass to proops to class -->
+    <div className={`flex md:justify-between flex-wrap items-center ${props.class}`}></div>
+    
 </body>
 </html>
