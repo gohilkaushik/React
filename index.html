@@ -14,6 +14,13 @@
     
 <!--     pass to proops to class -->
     <div className={`flex md:justify-between flex-wrap items-center ${props.class}`}></div>
+   
+<!-- hamburger menu react -->
+    const [menu, setMenu] = useState(false);
+    const habergarFunction = () => {
+    setMenu(!menu)
+    }
+    onClick={habergarFunction}
     
 </body>
 </html>
