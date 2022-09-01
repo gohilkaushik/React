@@ -1,27 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-<!-- add class in react library -->
+    <!-- add class in react library -->
     import classNames from "classnames";
-      const [navbarOpen, setNavbarOpen] = useState(false);
+    const [navbarOpen, setNavbarOpen] = useState(false);
     <div className={classNames("menu", { on: navbarOpen })}></div>
-    
-<!--     pass to proops to class -->
+
+    <!--     pass to proops to class -->
     <div className={`flex md:justify-between flex-wrap items-center ${props.class}`}></div>
-    <label htmlFor={props.inputId}  className={`fw-normal ${props.class || ''}`} name={props.radioName} >{props.RadioLabel}</label>
-   
-<!-- hamburger menu react -->
+    <label htmlFor={props.inputId} className={`fw-normal ${props.class || '' }`}
+        name={props.radioName}>{props.RadioLabel}</label>
+
+    <!-- hamburger menu react -->
     const [menu, setMenu] = useState(false);
     const habergarFunction = () => {
     setMenu(!menu)
     }
     onClick={habergarFunction}
-    
+
+    <!--     modal by defulat display none -->
+    {showImageModal &&
+    <div className="img-modal">
+        <div className="img-modal-content">
+            <img src={modalImage} alt="gallery-img" />
+        </div>
+    </div>
+    }
+
 </body>
+
 </html>
