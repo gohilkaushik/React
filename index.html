@@ -35,6 +35,21 @@
     </div>
     }
 
+    <!--     hamburger-btn toggle and close btn -->
+    import React,{ useState} from 'react'
+    import { CgMenu,CgClose } from "react-icons/cg";
+    
+    const Header = () => {
+    const [ menuIcon, setMenuIcon] = useState();
+    
+    return (
+        <div>
+            <button className={menuIcon ? "nav-btn active" : "nav-btn" }>
+                <CgMenu className='navs nav-icon' onClick={()=> setMenuIcon(true)}/>
+                <CgClose className='navs nav-close' onClick={()=> setMenuIcon(false)}/>
+            </button>
+        </div>
+    )}
+    export default Header;
 </body>
-
 </html>
