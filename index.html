@@ -51,5 +51,54 @@
         </div>
     )}
     export default Header;
+                
+                
+                
+<!--  Tabs React -->
+import React, { useState } from 'react';
+import { ReactComponent as HistoryIcon } from '../../../assets/images/Frame.svg';
+import History from './history/History';
+import Train from './train/Train';
+import classNames from 'classnames';
+
+const HISTORY_TAB = 'HISTORY_TAB';
+const TRAIN_TAB = 'TRAIN_TAB';
+
+const Index = () => {
+  const [tab, setTab] = useState(HISTORY_TAB);
+
+  return (
+    <>
+      <div className="tabs">
+        <ul className="tabs_nav">
+          <li
+            className={classNames({ active: tab === HISTORY_TAB })}
+            onClick={() => setTab(HISTORY_TAB)}
+          >
+            <div className="flex items-center">
+              <HistoryIcon />
+              <span className="ml-1">HISTORY</span>
+            </div>
+          </li>
+          <li
+            className={classNames({ active: tab === TRAIN_TAB })}
+            onClick={() => setTab(TRAIN_TAB)}
+          >
+            <div className="flex items-center">
+              <HistoryIcon />
+              <span className="ml-1">TRAIN</span>
+            </div>
+          </li>
+        </ul>
+        <div className="tabs_body">
+          {tab === HISTORY_TAB && <History />}
+          {tab === TRAIN_TAB && <Train />}
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Index;
 </body>
 </html>
